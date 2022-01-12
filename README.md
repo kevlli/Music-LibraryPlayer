@@ -19,7 +19,7 @@ I am working alone.
 ## Data Structures and Algorithms:
 I will be using arrays and linked lists for storage of the songs in the library. Using pipes, the parent will communicate with the music player to queue songs, shuffle play, or skip.
 ## Timeline:
-1/15 - Get forked child process music player to work with mp3 files.
-1/16 - Allow for saving/loading of the library with binary file.
-1/18 - Add queue, shuffle and skip function to music player
-1/20 - Enhance the music player so its more user friendly
+1/15 - Get forked child process music player to work with mp3 files.  
+1/16 - Allow for saving/loading of the library with binary file.  
+1/18 - Add queue, shuffle and skip function to music player  
+1/20 - Enhance the music player so its more user friendly  
