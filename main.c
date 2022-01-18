@@ -195,5 +195,23 @@ int main() {
     printf("Testing shuffle");
     shuffle(library);
     printf("\n====================================\n\n");
+    
+    // test to make sure song and library functions work
+    while (1) { // constantly prompts user
+    	printf("\nInstructions: To use music player, type command then enter. Case-insensitive\nCommands:\n - Add Song\n - Clear Library\n");
+    	int i;
+    	char input[BUFFERSIZE];
+    	fgets(input, BUFFERSIZE, stdin);
+    	for (i = 0; i < BUFFERSIZE; i++)
+    		input[i] = tolower(input[i]);
+    	printf("%s", input);
+    	if (!strcmp(input,"add song") || !strcmp(input,"add song\n"))
+    		printf("Input: Song name,Artist,mp3 file\n");
+    	if (!strcmp(input,"clear library") || !strcmp(input,"clear library\n"))
+    		clear_all(library);
+    
+    
+    
+    }
 
 }

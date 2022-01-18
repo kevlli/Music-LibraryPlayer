@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <ctype.h>
+#define BUFFERSIZE 100
 
 
 struct song_node ** allocate();
