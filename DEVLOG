@@ -1,0 +1,18 @@
+(January 17th, 2022 4:02 AM) Kevin
+Modified original project to take command line input.
+
+10:48 1/24 - Fixed input, made it more forgiving with case insensitivity
+
+3:05 1/25 - Got binary file saving/loading to work properly
+
+16:15 1/25 - Got binary file saving/loading to work properly without using fopen
+
+19:58 1/25 - Got basic soX mp3 player to work with fork and exec.
+
+6:10 1/26 - Added signal handler to allow exiting of mp3 player without exiting program. Added exit function.
+
+8:32 1/26 - Used opendir to find and list all playable files
+
+17:23 1/26 - implemented forking server / subserver. Allows multiple client connections to add more songs.
+
+20:01 1/26 - Finalized and checked code. Added help function.

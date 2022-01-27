@@ -119,5 +119,50 @@ void print_library(struct song_node **a) {
     if (a[26]) {
         printf("\nspecial characters: ");
         print_list(a[26]);
+        printf("\n");
     }
 } 
+
+int save_library(struct song_node **a) {
+    int save;
+    int i;
+    struct song_node *p;
+    save = open("library.bin", O_WRONLY | O_CREAT | O_APPEND , 0644); // open binary file
+    if (!save) { // error check
+        printf("Error: %s", strerror(errno));
+        return 0;
+    }
+
+    for  (i = 0; i < 27; i++) { // writes each individual byte of each song node struct into binary file
+        p = a[i];
+        while (p) {
+            write(save, p, sizeof(struct song_node));
+            p = p->next;
+        }
+    }
+    close(save);
+    printf("Successfully saved library to library.bin file!\n");
+    return 1;
+}
+
+int load_library(char *s, struct song_node **a) {
+    int save = open(s, O_RDONLY, 0644);
+    if (save == -1) {
+        printf("Error: %s", strerror(errno));
+        return 0;
+    }
+    
+    struct song_node b;
+    struct stat st;
+    stat(s, &st);
+    int size = st.st_size; //gets size of binary file to know how many read iterations are needed
+    int i;
+
+    for (i = 0; i < size / sizeof(struct song_node); i++) {
+        read(save, &b, sizeof(struct song_node)); //read a song node, then add it back to library
+        a = add_song(a, b.name, b.artist);
+    }
+    close(save);
+    printf("Successfully loaded %s library!\n", s);
+    return 1;
+}
