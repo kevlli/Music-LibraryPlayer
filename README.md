@@ -23,7 +23,7 @@ I will be using arrays and linked lists for storage of the songs in the library.
 1/20 - Enhance the music player so its more user friendly  
 # Termibrary
 ## Members
-Kevin Li period 4 
+Kevin Li
 ## Broad Project Description
 Termibrary is a terminal mixed with a music library that incorporates a music player, binary files, forking subservers, linked lists, and more!
 ## Required Libraries
